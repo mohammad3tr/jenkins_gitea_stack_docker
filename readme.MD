@@ -1,5 +1,8 @@
 ## gitea and jenkins by mounting docker daemon
 
+*** notice : Mounting the Docker Socket:***
+
+" Mounting the Docker socket (/var/run/docker.sock) into the Jenkins container effectively gives Jenkins full control over the Docker daemon on the host. This means Jenkins has the same privileges as the host's root user, which can be a significant security risk, especially if Jenkins is compromised "
 
 1- setup your mirror repository:  see https://github.com/mohammad3tr/Docker-Registery.git
 
