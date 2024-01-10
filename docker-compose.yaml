@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  jenkins:
+    image: m3tr-jenkins 
+    user: root
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Tehran
+      - JAVA_OPTS=-Duser.timezone=Asia/Tehran
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./jenkins_data:/var/jenkins_home
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    labels:
+      - "app.dws.name=jenkins"
+      - "app.dws.part-of=jenkins"
+      - "app.dws.created-by=M3tr"
+
+  gitea:
+    image: gitea/gitea:1.21.2
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Tehran
+    volumes:
+      - ./gitea_data:/data
+        # - ./gitea_config:/etc/gitea
+    ports:
+      - "3000:3000"
+      - "2222:22"
+    labels:
+      - "app.dws.name=gitea"
+      - "app.dws.part-of=jenkins"
+      - "app.dws.created-by=M3tr"
+
+volumes:
+  jenkins_data:
+  gitea_data:
