@@ -7,6 +7,8 @@ This means Jenkins has the same privileges as the host's root user, which can be
 1- setup your mirror repository: 
 
  https://github.com/mohammad3tr/Docker-Registery.git
+#### OR
+https://github.com/mohammad3tr/Docker_Registery_cache_private.git
 
 2- git clone https://github.com/mohammad3tr/jenkins_gitea_stack_docker.git 
 
