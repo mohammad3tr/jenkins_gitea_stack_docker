@@ -4,7 +4,7 @@
 effectively gives Jenkins full control over the Docker daemon on the host.
 This means Jenkins has the same privileges as the host's root user, which can be a significant security risk, especially if Jenkins is compromised*~~ 
 
-1- setup your mirror repository: 
+1- setup your mirror repository if you need to: 
 
  https://github.com/mohammad3tr/Docker-Registery.git
 #### OR
